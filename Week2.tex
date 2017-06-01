@@ -1,5 +1,7 @@
 \documentclass[twoside]{article}
 \usepackage{lmodern}
+\usepackage{listings}
+\usepackage{amsmath}
 \title{Artificial Intelligence: Week 2}
 \date{}
 \author{}
@@ -47,7 +49,38 @@ terms of three quantities: \emph{b}, the \textbf{branching factor} or maximum
 number of successors of any node; \emph{d}, the \textbf{depth} of the shallowest
 goal node; and \emph{m}, the maximum length of any path in the state space.
 
-\subsection{Uniformed Search Strategies}
+\subsection{Uninformed Search Strategies}
 \subsubsection{Breadth-First Search}
-
+This is a simple strategy in which all the nodes are expanded at a given depth
+in the search tree before any nodes at the next level are expanded. The 
+algorithm is given below:
+\begin{lstlisting}
+function BFS(problem) returns a solution, or failure
+  node = a node with STATE = problem.INITIAL-STATE, PATH-COST = 0
+  if problem.GOAL-TEST(node.STATE) then return SOLUTION(node)
+  frontier = a FIFO queue with node as the only element
+  explored = an empty set
+  loop do
+    if EMPTY?(frontier) then return failure
+    node = POP(frontier)
+    add node.STATE to explored
+    for each action in problem.ACTIONS(node.STATE) do
+      child = CHILD-NODE(problem, node, action)
+      if child.STATE is not in explored or frontier then
+        if problem.GOAL-TEST(child.STATE) then return SOLUTION(child)
+          frontier = INSERT(child, frontier)
+\end{lstlisting}
+BFS is \emph{complete} - if the shallowest goal node is at some finite depth
+BFS will eventually find it after generating all the shallower nodes. Note
+that the \emph{shallowest} is not always the \emph{optimal} one. BFS is only 
+optimal if the path cost is a non-decreasing function of the depth of the node.
+The time complexity of BFS is:
+\begin{equation}
+    b + b^2 + b^3 + ... + b^d = O(b^d)
+\end{equation}
+For the space complexity there will be \(O(b^{d-1})\) nodes in the explored set 
+and \(O(b^{d})\) nodes in the frontier, giving space complexity as \(O(b^{d})\).
+\emph{Memory requirements are a bigger problem for BFS than execution time and
+time is still a major factor. Exponential-complexity search problems cannot
+be solved by uninformed methods for any but the smallest instances.}
 \end{document}
