@@ -7,4 +7,47 @@
 \maketitle
 \section{Problem Solving by Searching}
 
+\textbf{Goal formulation}, based on the current situation and the agent's
+performance measure, is the first step in problem solving. \textbf{Problem 
+formulation} is the process of deciding what actions and states to consider,
+given a goal. In general, \emph{an agent with several immediate options of 
+unknown value can decide what to do by first examining future actions that 
+eventually lead to states of known value.} The process of looking for a 
+sequence of actions that reaches the goal is called \textbf{search}. A search
+algorithm takes a problem as input and returns a \textbf{solution} in the 
+form of an action sequence. Once a solution is found, the actions it recommends
+can be carried out. This is called the \textbf{execution} phase. Note while
+the agent is executing, it \emph{ignores its percepts} when choosing its actions
+because it knows in advance what they will be.\\
+
+Together, the \textbf{initial state, actions and transition model} implicitly
+define the \textbf{state space} of the problem - the set of all states
+reachable from the initial state by any sequence of actions. A \textbf{solution}
+to a problem is an action sequence that leads from the initial state to a goal
+state. Solution quality is measured by the path cost function, and an \textbf{
+optimal solution} has the lowest path cost among all solutions. The process 
+of removing detail from a representation is called \textbf{abstraction}.\\
+
+It is quite important to distinguish between a node and a state: a node is a 
+bookkeeping data structure used to represent the search tree. A state 
+corresponds to a configuration of the world. Furthermore, two different states
+can contain the same world state if that state is generated via two different
+search paths. We can evaluate the performance of an algorithm in four ways:
+\begin{itemize}
+    \item \textbf{Completeness}: Is the algorithms guaranteed to find a solution
+    if there is one?
+    \item \textbf{Optimality}: Does the strategy find the optimal solution?
+    \item \textbf{Time complexity}: How long does it take to find a solution?
+    \item \textbf{Space complexity}: How much memory is needed to perform the
+    search?
+\end{itemize}
+In AI, the graph is often represented implicitly by the initial state, actions
+and transition model and is frequently infinite. Complexity is expressed in
+terms of three quantities: \emph{b}, the \textbf{branching factor} or maximum
+number of successors of any node; \emph{d}, the \textbf{depth} of the shallowest
+goal node; and \emph{m}, the maximum length of any path in the state space.
+
+\subsection{Uniformed Search Strategies}
+\subsubsection{Breadth-First Search}
+
 \end{document}
