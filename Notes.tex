@@ -367,4 +367,54 @@ It is also called \textbf{greedy local search}. Hill-Climbing gets stuck in
   \caption{Hill-Climbing Search.}
   \label{fig:hill}
 \end{figure}
+\section{Adversarial Search}
+A \textbf{utility function} is defined as the final numeric value for a game
+that ends in terminal state \(s\) for a player \(p\). A \textbf{zero-sum game}
+is defined as one where the total payoff to every player is the same in 
+every instance of the game.
+\subsection{The Minimax Algorithm}
+The algorithm is shown in figure \ref{fig:minimax}. The utility values of the 
+leaf nodes are computed and the corresponding minimax values are backed up
+the tree recursively. The time complexity of this algorithm is \(O(b^m)\), where
+\(m\) is the maximum depth of the tree and there are \(b\) legal moves at each
+point. The space complexity is \(O(bm)\) for an implementation that generates
+all the actions at once and \(O(m)\) for an implementation that generates 
+actions one at a time.
+\begin{figure}
+  \includegraphics[width=\linewidth]{minimax.png}
+  \caption{The Minimax Algorithm.}
+  \label{fig:minimax}
+\end{figure}
+\subsection{Alpha-Beta Pruning}
+A way to improve the abysmal complexity of Minimax is to use alpha-beta 
+pruning, which prunes away branches that can't possibly influence the final
+decision. \(\alpha\) is the best choice we have found so far for Max and 
+\(\beta\) is the best choice for Min. The algorithm is applied in figure
+\ref{fig:alpha-beta}. \textbf{Move ordering} can be applied to improve
+complexity to \(O(b^{m/2})\) and the branching factor becomes \(\sqrt{b}\). If the 
+successors are examined at random and not best-first the complexity increases
+to \(O(b^{3m/4})\). The best moves in a game are called \textbf{killer moves}
+and a killer move heuristic is used to find them. The hash table of 
+previously seen moves is called a \textbf{transposition table}.
+\begin{figure}
+  \includegraphics[width=\linewidth]{alpha-beta.png}
+  \caption{Alpha-Beta Pruning.}
+  \label{fig:alpha-beta}
+\end{figure}
+\subsection{Evaluation Functions}
+An evaluation function returns an estimate of the expected utility from a given
+position. This is useful as sometimes we want to stop our search at a depth 
+limit and evaluate the leaf nodes using this function. Most evaluation
+functions compute separate numerical contributions from each feature then
+combine them to find the total value. These types of functions are also called
+\textbf{weighted linear functions} because:
+\begin{equation}
+        E(s) = w_1f_1(s) + w_2f_2(s) + ... + w_nf_n(s) = \sum_{i=1}^{n} w_if_i(s)
+\end{equation}
+In \textbf{cutting off search} \texttt{isTerminal} and \texttt{utility} in minimax
+are replaced by \texttt{cutoff} and \texttt{eval}. In stochastic games, 
+chance nodes are added in addition to min/max nodes. The minimax values are also
+replaced by \textbf{expected values}: the average over all possible outcomes of 
+the chance nodes. This leads us to make \textbf{expecti-minimax} for games with
+chance nodes.
 \end{document}
