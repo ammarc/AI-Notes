@@ -1,0 +1,253 @@
+\documentclass[twoside]{article}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\title{Artificial Intelligence}
+\date{}
+\author{}
+\begin{document}
+\maketitle
+\section{What is an AI?}
+There are various definitions of an AI, ranging from thinking humanly and
+rationally to acting humanly and rationally. The \emph{turing test}, is test
+in which a human interrogator interacts with a machine, sending it messages
+back and forth, and a machine passes if it fools the human into thinking that
+the messages are being sent to them by a human. For this a computer needs:
+\textbf{natural language processing, knowledge representation, automated
+reasoning and machine learning}. To pass the \emph{total turing test} a computer
+would additionally need \textbf{computer vision and robotics.}
+\subsection{Intelligent Agents}
+An \textbf{agent} is just something that acts and a \textbf{rational agent} is
+one that acts so as to achieve the best outcome or, when there is uncertainty,
+the best expected outcome. \textbf{Percept} means the agent's perceptual inputs
+at any given time, and a \textbf{percept sequence} is the complete history of
+everything the agent has ever perceived. The \textbf{agent function} is an
+abstract mathematical description that maps a given percept to an action; an
+\textbf{agent program} is a concrete implementation of the agent function, running within some
+physical system. \emph{It is better to design a performance measure according
+to what one wants in an environment, then how one wants an agent to behave.}
+\\ \\
+The proper definition of a rational agent is \emph{for each possible percept
+sequence, a rational agent should select an action that is expected to
+maximize its performance measure, given the evidence provided by the percept
+sequence and whatever built-in knowledge the agent has.} An \textbf{omniscient}
+agent knows the actual outcomes of its actions.
+\subsection{The Nature of Environments}
+An environment is defined as \textbf{PEAS}: performance measure, environment,
+actuators and sensors. There are different types of environments, namely:
+\begin{itemize}
+\item \textbf{Observable vs Partially-Observable}: it is observable when the agents'
+        sensors have complete access to the environment's state at all times
+\item \textbf{Single agent vs Multi agent}: there could be multiple agents in
+        an environment. There is also a question of what must be considered an
+        agent. This gives way to the concept of \textbf{competitive} vs
+        \textbf{cooperative} environments.
+\item \textbf{Deterministic vs Stochastic}: If the next state can be completely
+        determined by the current state and the action executed by the agent,
+        then it is deterministic; and stochastic otherwise. An environment
+        is \textbf{uncertain} if it is not fully observable or not deterministic.
+        Note that a \textbf{non-deterministic} environment is one where each
+        action is characterized by its possible outcomes, but no probabilities
+        are attached to them.
+\item \textbf{Episodic vs Sequential}: In an episodic environment the agent's
+        experience is divided into atomic episodes. The next episode doesn't
+        depend on the action taken in the previous episode.
+\item \textbf{Static vs Dynamic}: If an environment can change when an agent
+        is deliberating, then it's dynamic, and is static otherwise. If the
+        environment doesn't change when deliberating but the performance score
+        does, then we call it \textbf{semi-dynamic.}
+\item \textbf{Discrete vs Continuous}: The distinction here applies to the state
+        of the environment, the way time is handled and the percepts and actions
+        of the agent. For example, chess having a discrete set of states; the
+        same doesn't apply for taxi driving.
+\item \textbf{Known vs Unknown}: This applies to the agent's state of knowledge
+        about the ``laws of physics'' of the environment. Note that it's 
+        possible that a known environment is partially observable like solitaire.
+        Conversely, an environment can also be unknown and fully observable,
+        like in a video game, one can see the state but one doesn't know the
+        control until one tries to play.
+\end{itemize}
+\subsection{The Structure of Agents}
+There are four basic types of agent programs:
+\begin{itemize}
+        \item \textbf{Simple Reflex Agents}: Agents that select the current
+        action based on the current precepts and ignoring the rest of the
+        precept history. It is also important to note that these types of
+        agents are usually implemented in a fully-observable environment.
+        \item \textbf{Model-Based Reflex Agents}: The best way to handle a
+        partially observable environment is to keep some sort of an internal
+        representation of the aspects of the environment not currently
+        observable. Therefore, an agent should have some sort of knowledge
+        about how the world works and the agents who have said knowledge are
+        called model-based agents.
+        \item \textbf{Goal-Based Agents}: These types of agents consider how
+        close they get to a goal, in addition to have a model of how their
+        environment works. These types of agents are also quite flexible as
+        they can update their actions on-the-fly depending on their goals and
+        the feedback they get from the environment.
+        \item \textbf{Utility-Based Agents}: Since the previous model does not
+        differentiate between how it gets to its goal, and which state would
+        make it more happy, it is not efficient. Therefore a utility function
+        is needed to determine just that i.e. it is an internalization of its
+        performance measure. The previous model will also fail when there are
+        conflicting goals or when there are several goals the agent can aim
+        for, none of which can be achieved with certainty; in both cases,
+        a utility function can dictate which action to take to maximize
+        expected utility.
+\end{itemize}
+There are different ways an agent can represent the world around it:
+\begin{itemize}
+        \item \textbf{Atomic}: Each state is of the world is indivisible: it
+        has no internal structure.
+        \item \textbf{Factored}: Each state is split up into a fixed set of
+        variables and attributes, each of which can have a value. Uncertainty
+        can also be represented in this representation.
+        \item \textbf{Structured}: This type of representation has objects and
+        their relationship with each other.
+\end{itemize}
+
+\section{Problem Solving by Searching}
+
+\textbf{Goal formulation}, based on the current situation and the agent's
+performance measure, is the first step in problem solving. \textbf{Problem 
+formulation} is the process of deciding what actions and states to consider,
+given a goal. In general, \emph{an agent with several immediate options of 
+unknown value can decide what to do by first examining future actions that 
+eventually lead to states of known value.} The process of looking for a 
+sequence of actions that reaches the goal is called \textbf{search}. A search
+algorithm takes a problem as input and returns a \textbf{solution} in the 
+form of an action sequence. Once a solution is found, the actions it recommends
+can be carried out. This is called the \textbf{execution} phase. Note while
+the agent is executing, it \emph{ignores its percepts} when choosing its actions
+because it knows in advance what they will be.\\
+
+Together, the \textbf{initial state, actions and transition model} implicitly
+define the \textbf{state space} of the problem - the set of all states
+reachable from the initial state by any sequence of actions. A \textbf{solution}
+to a problem is an action sequence that leads from the initial state to a goal
+state. Solution quality is measured by the path cost function, and an \textbf{
+optimal solution} has the lowest path cost among all solutions. The process 
+of removing detail from a representation is called \textbf{abstraction}.\\
+
+It is quite important to distinguish between a node and a state: a node is a 
+bookkeeping data structure used to represent the search tree. A state 
+corresponds to a configuration of the world. Furthermore, two different states
+can contain the same world state if that state is generated via two different
+search paths. We can evaluate the performance of an algorithm in four ways:
+\begin{itemize}
+    \item \textbf{Completeness}: Is the algorithms guaranteed to find a solution
+    if there is one?
+    \item \textbf{Optimality}: Does the strategy find the optimal solution?
+    \item \textbf{Time complexity}: How long does it take to find a solution?
+    \item \textbf{Space complexity}: How much memory is needed to perform the
+    search?
+\end{itemize}
+In AI, the graph is often represented implicitly by the initial state, actions
+and transition model and is frequently infinite. Complexity is expressed in
+terms of three quantities: \emph{b}, the \textbf{branching factor} or maximum
+number of successors of any node; \emph{d}, the \textbf{depth} of the shallowest
+goal node; and \emph{m}, the maximum length of any path in the state space.
+
+\subsection{Uninformed Search Strategies}
+\subsubsection{Breadth-First Search}
+This is a simple strategy in which all the nodes are expanded at a given depth
+in the search tree before any nodes at the next level are expanded. The 
+algorithm is given in figure \ref{fig:bfs}.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{bfs.png}
+  \caption{Breadth-First Search.}
+  \label{fig:bfs}
+\end{figure}
+BFS is \emph{complete} - if the shallowest goal node is at some finite depth
+BFS will eventually find it after generating all the shallower nodes. Note
+that the \emph{shallowest} is not always the \emph{optimal} one. BFS is only 
+optimal if the path cost is a non-decreasing function of the depth of the node.
+The time complexity of BFS is:
+\begin{equation}
+    b + b^2 + b^3 + ... + b^d = O(b^d)
+\end{equation}
+For the space complexity there will be \(O(b^{d-1})\) nodes in the explored set 
+and \(O(b^{d})\) nodes in the frontier, giving space complexity as \(O(b^{d})\).
+\emph{Memory requirements are a bigger problem for BFS than execution time and
+time is still a major factor. Exponential-complexity search problems cannot
+be solved by uninformed methods for any but the smallest instances.}
+
+\subsubsection{Uniform-Cost Search}
+This is similar to BFS, but it expands the node with the lowest path cost, the
+goal test is applied to a node \emph{not when it's generated, but when it's
+chosen for expansion} and a test is added in case a better path is found to a
+node currently on the frontier. The algorithm is given in figure \ref{fig:ucs}.
+First, we note that whenever this algorithm selects a node for expansion, the 
+optimal path to that node is found and second, paths never get shorter as
+nodes are added. Thus, \emph{uniform-cost search expands nodes in order of 
+their optimal path cost.} This search is complete given that the cost of every
+step exceeds some small positive constant \(\epsilon\). The space and time
+complexity is \(O(b^{1+\lfloor C^*/\epsilon \rfloor})\), where \(C^*\) is the
+cost of the optimal solution.
+\begin{figure}
+  \includegraphics[width=\linewidth]{uniform.png}
+  \caption{Uniform-Cost Search.}
+  \label{fig:ucs}
+\end{figure}
+\subsubsection{Depth-First Search}
+Depth-First Search always expands upon the deepest node in the frontier, this
+is accomplished using a LIFO queue. The graph-search version of the algorithm
+is complete in finite spaces but the tree-search version could potentially
+fall into a infinite loop. Although, it must be noted that both versions fail
+if there is an infinite state space, with an infinite non-goal path e.g.
+Knuth's 4 problem. Both versions are also not optimal. The time complexity of
+DFS is \(O(b^m)\) and space complexity is \(O(bm)\).
+\begin{figure}
+  \includegraphics[width=\linewidth]{dfs.png}
+  \caption{Depth-First Search.}
+  \label{fig:dfs}
+\end{figure}
+\subsubsection{Depth-Limited Search}
+The problem of DFS failing in infinite spaces can be solved if we apply a
+limit \(l\) to the depth we expand up till. Although, it introduces 
+incompleteness if we choose \(l < d\) and non-optimality if \(l > d \). Its 
+time complexity is \(O(b^l)\) and its space complexity is \(O(bl)\). Its 
+pseudocode is shown in figure \ref{fig:dls}.
+\begin{figure}
+  \includegraphics[width=\linewidth]{dls.png}
+  \caption{Depth-Limited Search.}
+  \label{fig:dls}
+\end{figure}
+\subsubsection{Iterative Deepening Search}
+The algorithm of IDS is shown in figure \ref{fig:ids}. Its space complexity
+is \(O(bd)\). Like BFS, IDS is complete if the branching factor is finite and
+it is optimal when the path cost is a non-decreasing function of the depth.
+The time complexity is:
+\begin{equation}
+    (d)b + (d - 1)b^2 + ... + (d - d + 1)b^d = O(b^d)
+\end{equation}
+\emph{In general, IDS is preferred if the search space is large and the depth
+of the solution is not known.}
+\begin{figure}
+  \includegraphics[width=\linewidth]{ids.png}
+  \caption{Iterative Deepening Search.}
+  \label{fig:ids}
+\end{figure}
+\subsubsection{Bidirectional Search}
+Bidirectional search applies the idea of starting two searches: one from the
+initial state and one from the goal state, hoping that they meet in the middle;
+with the motivation that \(b^{d/2} + b^{d/2} < b^d\). Thus the space and time
+complexity for this algorithm is \(O(b^{d/2})\).
+\subsubsection{Comparison of Uninformed Search Strategies}
+Figure \ref{fig:comparison} shows comparisons for tree search versions of the 
+algorithms discussed. For graph searches, the main difference is that DFS is
+complete for finite state spaces and that the space and the time complexities
+are bounded by size of the state space.
+\begin{figure}
+  \includegraphics[width=\linewidth]{comparison.png}
+  \caption{Comparison of uninformed search strategies. \(b\) is the branching 
+  factor; \(d\) is the depth of the shallowest solution; \(m\) is the maximum depth 
+  of the search tree; \(l\) is the depth limit. Superscript caveats are as follows:
+  \(^a\) complete if \(b\) is finite; \(b\) complete if step costs \(\geq \epsilon\)
+   for positive \(\epsilon\); \(^c\) optimal if step costs are all identical; 
+  if both directions use breadth-first search.}
+  \label{fig:comparison}
+\end{figure}
+\end{document}
