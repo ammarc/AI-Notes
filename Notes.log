@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  3 JUN 2017 23:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 JUN 2017 01:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -362,32 +362,37 @@ File: comparison.png Graphic file (type png)
 Package pdftex.def Info: comparison.png used on input line 245.
 (pdftex.def)             Requested size: 345.0pt x 75.40234pt.
  [7 <./dls.png> <./ids.png>] [8 <./comparison.png>]
-[9] (./Notes.aux) ) 
+[9] <hill.png, id=55, 703.62875pt x 242.9075pt>
+File: hill.png Graphic file (type png)
+ <use hill.png>
+Package pdftex.def Info: hill.png used on input line 366.
+(pdftex.def)             Requested size: 345.0pt x 119.09984pt.
+ [10] [11 <./hill.png>] (./Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 3712 strings out of 493014
- 51924 string characters out of 6133351
- 114031 words of memory out of 5000000
- 7181 multiletter control sequences out of 15000+600000
+ 3718 strings out of 493014
+ 51993 string characters out of 6133351
+ 114040 words of memory out of 5000000
+ 7186 multiletter control sequences out of 15000+600000
  46898 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,6n,32p,552b,227s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ma
-thsy.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{
-/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2016/
-texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2016/texmf-dist
-/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/lm/lmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/l
-m/lmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr17.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local
-/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2016/texmf-
-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2016/texmf-dist/fonts/
-type1/public/lm/lmsy7.pfb>
-Output written on Notes.pdf (9 pages, 650197 bytes).
+{/usr/local/texlive/2016/texmf-dist/font
+s/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvip
+s/lm/lm-mathit.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm
+.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
+/public/lm/lmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/
+lmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
+Output written on Notes.pdf (11 pages, 710134 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
