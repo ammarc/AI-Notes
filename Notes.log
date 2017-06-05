@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 JUN 2017 03:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  5 JUN 2017 16:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -365,56 +365,56 @@ Package pdftex.def Info: comparison.png used on input line 245.
 [9] <hill.png, id=55, 703.62875pt x 242.9075pt>
 File: hill.png Graphic file (type png)
  <use hill.png>
-Package pdftex.def Info: hill.png used on input line 366.
+Package pdftex.def Info: hill.png used on input line 369.
 (pdftex.def)             Requested size: 345.0pt x 119.09984pt.
 
 <minimax.png, id=56, 737.75626pt x 389.455pt>
 File: minimax.png Graphic file (type png)
  <use minimax.png>
-Package pdftex.def Info: minimax.png used on input line 384.
+Package pdftex.def Info: minimax.png used on input line 387.
 (pdftex.def)             Requested size: 345.0pt x 182.12276pt.
  [10]
 <alpha-beta.png, id=60, 740.7675pt x 498.86375pt>
 File: alpha-beta.png Graphic file (type png)
  <use alpha-beta.png>
-Package pdftex.def Info: alpha-beta.png used on input line 400.
+Package pdftex.def Info: alpha-beta.png used on input line 403.
 (pdftex.def)             Requested size: 345.0pt x 232.34224pt.
  [11 <./hill.png> <./minimax.png>]
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 414
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 417
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [12 <./alpha-beta.png>] (./Notes.aux) ) 
+) [12 <./alpha-beta.png>] [13] (./Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 3769 strings out of 493014
- 52841 string characters out of 6133351
- 114058 words of memory out of 5000000
- 7231 multiletter control sequences out of 15000+600000
- 47209 words of font info for 52 fonts, out of 8000000 for 9000
+ 3773 strings out of 493014
+ 52885 string characters out of 6133351
+ 115058 words of memory out of 5000000
+ 7233 multiletter control sequences out of 15000+600000
+ 53084 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,6n,32p,552b,227s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fo
-nts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvip
-s/lm/lm-mathex.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ma
-thsy.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{
-/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2016/
-texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2016/texmf-dist
-/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/lm/lmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
-lm/lmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr10.pf
-b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2016/texmf-
-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts
-/type1/public/lm/lmsy5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
-ic/lm/lmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmtt1
-0.pfb>
-Output written on Notes.pdf (12 pages, 937728 bytes).
+{/usr/local/texlive/2016/texmf-di
+st/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc
+/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/
+lm-mathsy.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.
+enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/public/lm/lmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
+blic/lm/lmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr
+10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr17.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
+/public/lm/lmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/
+lmtt10.pfb>
+Output written on Notes.pdf (13 pages, 943451 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 123 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
