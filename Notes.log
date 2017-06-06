@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  5 JUN 2017 16:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 JUN 2017 20:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -385,36 +385,68 @@ LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 417
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [12 <./alpha-beta.png>] [13] (./Notes.aux) ) 
+) [12 <./alpha-beta.png>] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 482--494
+
+ []
+
+[14] <ac3.png, id=79, 787.94376pt x 476.78125pt>
+File: ac3.png Graphic file (type png)
+ <use ac3.png>
+Package pdftex.def Info: ac3.png used on input line 532.
+(pdftex.def)             Requested size: 345.0pt x 208.7586pt.
+
+<backtrack.png, id=80, 786.94pt x 429.605pt>
+File: backtrack.png Graphic file (type png)
+ <use backtrack.png>
+Package pdftex.def Info: backtrack.png used on input line 544.
+(pdftex.def)             Requested size: 345.0pt x 188.33847pt.
+ [15 <./ac3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 556--566
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 572--583
+
+ []
+
+[16 <./backtrack.png>] <tcs.png, id=89, 785.93625pt x 358.33875pt>
+File: tcs.png Graphic file (type png)
+
+<use tcs.png>
+Package pdftex.def Info: tcs.png used on input line 585.
+(pdftex.def)             Requested size: 345.0pt x 157.30319pt.
+ [17 <./tcs.png>] [18] (./Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 3773 strings out of 493014
- 52885 string characters out of 6133351
- 115058 words of memory out of 5000000
- 7233 multiletter control sequences out of 15000+600000
+ 3791 strings out of 493014
+ 53110 string characters out of 6133351
+ 115088 words of memory out of 5000000
+ 7248 multiletter control sequences out of 15000+600000
  53084 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,6n,32p,552b,227s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-di
-st/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc
-/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/
-lm-mathsy.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.
-enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2016/texmf-dist/font
-s/type1/public/lm/lmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
-blic/lm/lmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr
-10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr17.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2016/texmf-dist/
-fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
-/public/lm/lmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/
-lmtt10.pfb>
-Output written on Notes.pdf (13 pages, 943451 bytes).
+{/usr/local/texlive/2016/texmf-dist/fonts
+/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/l
+m/lm-mathex.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-maths
+y.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/us
+r/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/lm/lmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
+public/lm/lmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/
+lmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/public/lm/lmsy5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
+lm/lmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmtt10.p
+fb>
+Output written on Notes.pdf (18 pages, 1164033 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
+ 144 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
