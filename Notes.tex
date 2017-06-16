@@ -611,4 +611,81 @@ we have to try each of the \(d^c\) combinations of values for the variables in
 Finding the \emph{smallest} cycle cutset is NP-hard, but efficient algorithms 
 like \textbf{cutset conditioning} can be used, which instantiates, in all ways,
 a set of variables such that the remaining constraint graph is a tree.
+\section{Quantifying Uncertainty}
+The problems with keeping track of a belief state - a representation of the set
+of all possible world states that it might be in - are:
+\begin{itemize}
+        \item The agent must consider every logical possible explanation for
+        the observations, no matter how unlikely, leading to impossible large
+        and complex belief-state representations.
+        \item A correct contingent plan that handles every eventuality can 
+        grow arbitrarily large and must consider arbitrarily unlikely 
+        contingencies.
+        \item Sometimes there is no plan that is guaranteed to achieve the 
+        goal. It must have some way to compare the merits of plans that are 
+        not guaranteed.
+\end{itemize}
+Decision theory essentially states that an agent is rational if and only if it 
+chooses the action that yields the highest expected utility, averages over all
+the possible outcomes of the action. The basic axioms of probability theory say
+that every possible world has a probability between 0 and 1 and that the total
+probability of the set of possible worlds is 1:
+\begin{equation}
+        0 \leq P(\omega) \leq 1 \text{ for every } \omega \text{ and } \sum_{\omega \in \Omega} P(\omega) = 1
+\end{equation}
+Conditional probabilities are defined by:
+\begin{equation}
+        P(a|b) = \frac{P(a \land b)}{P(b)}
+\end{equation}
+Note also the inclusion-exclusion principle:
+\begin{equation}
+        P(a \lor b) = P(a) + P(b) - P(a \land b)
+\end{equation}
+The following equations give marginal probability and conditioning respectively:
+\begin{equation}
+        \mathbf{P(Y) = \sum_{z \in Z} P(Y, z)}
+        \mathbf{P(Y) = \sum_{z \in Z}P(Y|z)}P(\mathbf{z})
+\end{equation}
+Let \(\mathbf{E}\) be the list fo evidence variables, let \(\mathbf{e}\) be 
+the list of observed values for them and let \(\mathbf{Y}\) be the remaining
+unobserved variables and then we have:
+\begin{equation}
+        \mathbf P(X|\mathbf e) = \alpha \mathbf P(X, \mathbf e) = \alpha \sum_\mathbf y \mathbf P(X, \mathbf e, \mathbf y)
+\end{equation}
+Independence can be written as:
+\begin{equation}
+        P(a|b) = P(a) \text{ or } P(a \land b) = P(a)P(b)
+\end{equation}
+And independence for random variables can be written as:
+\begin{equation}
+        \mathbf P(X|Y) = \mathbf P(X) \text{ or } \mathbf P(X, Y) = \mathbf P(X) \mathbf P(Y)
+\end{equation}
+\subsection{Bayes' Rule}
+The \textbf{Bayes' rule} is given as:
+\begin{equation}
+        P(b \mid a) = \frac{P(a \mid b)P(b)}{P(a)}
+\end{equation}
+The Bayes' rule for multivariate variables is:
+\begin{equation}
+        \mathbf P(Y \mid X) = \frac{\mathbf P(X \mid Y) \mathbf P(Y)}{\mathbf P(X)}
+\end{equation}
+Gives \(\alpha\) is is the normalization constant needed to make entries in 
+\(\mathbf P(Y|X)\) sum to 1, the Bayes' rule becomes:
+\begin{equation}
+        \mathbf P(Y|X) = \alpha \mathbf P(X|Y) \mathbf P(Y)
+\end{equation}
+The \textbf{conditional independence} of two variables \(X\) and \(Y\), given 
+a third variable \(Z\) is:
+\begin{equation}
+        \mathbf P(X,Y|Z) = \mathbf P(X|Z) \mathbf P(Y|Z)
+\end{equation}
+The following equation illustrates how a single cause directly influences a 
+number of effects, all of which are conditionally 
+independent, given the cause:
+\begin{equation}
+        \mathbf P(Cause, Effect_1,...,Effect_n) = \mathbf P(Cause) \prod _i \mathbf P(Effect_i|Cause)
+\end{equation}
+Such a probability distribution function is called a \textbf{naive Bayes} 
+model as it is often used in cases where the ``effect'' variables are not 
+actually conditionally independent given the cause variables.
 \end{document}
