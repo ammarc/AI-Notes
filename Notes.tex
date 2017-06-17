@@ -822,4 +822,79 @@ themselves (but know a probability distribution from which those values are
 sampled), will yield the same expected revenue. This means that the various 
 mechanisms aren't competing on the basis of revenue generation, but rather on
 other qualities.
+\section{Robotics}
+Robots are physical agents that perform tasks by manipulating the physical world.
+To do so, they are equipped with \textbf{effectors} and \textbf{sensors}. There 
+are three major types of robots:
+\begin{itemize}
+        \item \textbf{Manipulators}: or robot arms, are physically anchored to 
+        their workplace.
+        \item \textbf{Mobile robots}: which move about their environment using
+        wheels, legs, etc. Examples are UGVs, UAVs, AUVs, etc.
+        \item \textbf{Mobile manipulator}: which combines mobility with manipulation.
+        They can apply their effectors further afield than anchored manipulators
+        can, but their task is made harder because they don't have the rigidity
+        that the anchor provides.
+\end{itemize}
+Effectors can be talked about using the concept of \textbf{degrees of freedom},
+an AUV would have 6 DOFs: \((x,y,z)\) and angular rotation i.e. \(yaw,roll,pitch\).
+These six degrees define the \textbf{kinematic state} or \textbf{pose} of the robot.
+A robot is \textbf{nonholonomic} if it has more effective DOFs than controllable
+DOFs and \textbf{holonomic} if the two numbers are the same. There are many 
+sources of uncertainty in motion actions like slippage, inaccurate joint 
+encoding, rough surfaces, obstacles, effector breakdown (injuries), etc. There
+are different types of sensors: range finders like sonar, laser range finder, 
+radar, GPS; imaging sensors like visual and infrared cameras; proprioceptive 
+sensors like shaft decoders (joint, wheels), inertial sensors, force sensors,
+torque sensors, etc. Therefore the agent must make assumptions on how the world 
+works.
+\subsection{Localization}
+Figure \ref{fig:localization} shows an action, \(A_t\) at time \(t\) in state 
+\(X_{t+1}\) and observation \(Z_{t+1}\). We can use particle filtering to 
+produce approximate position estimates. First we start with random samples from
+uniform prior distribution for the robot position and then update the likelihood
+of each sample using sensor measurements. Finally, we re-sample according to 
+updated likelihoods. We need to continuously update our distribution for the 
+current state using the latest measurements. The uncertainty of the robot's 
+state grows as it moves until we find a landmark. We assume that landmarks are 
+identifiable.
+\begin{figure}
+  \includegraphics[width=\linewidth]{localization.png}
+  \caption{An example robot perception.}
+  \label{fig:localization}
+\end{figure}
+Localization is essentially: given map and observed landmarks, update pose 
+distribution and \textbf{mapping} is: given pose and observed landmarks, update
+map distribution. Consequently, \textbf{Simultaneous Localization and Mapping} 
+or SLAM is given observed landmarks, update pose and pose distribution. In the
+probabilistic formulation of SLAM, the landmark locations \(L_1,...,L_k\) are 
+added to the state vector and we proceed as for localization. Given the current 
+probability distribution, \(P(H)\) and the new measurement \(M\), the update 
+probability distribution is:
+\begin{equation}
+        P(H) \gets \frac{P(M|H)}{P(M)}P(H)
+\end{equation}
+This is sometimes called the Bayesian update rule.
+\subsection{Motion Planning}
+We now have to plan in the \textbf{configuration space} defined by the robot's DOFs. The 
+problem is that there \(\infty^d\) states and we need to convert them into 
+finite states. This can be done by:
+\begin{itemize}
+        \item \textbf{Cell decomposition}: divide up space into simple cells, 
+        each of which can be traversed easily. The problem here is that there
+        maybe no path in pure free space cells which is solved by recursive 
+        decomposition of free and obstacle, mixed, cells.
+        \item \textbf{Skeletonization}: identify finite number of easily connect 
+        points/lines that form a graph such that ny two points are connected by 
+        a path on the graph. Figure \ref{fig:maps} shows voronoi diagram in 
+        which the locus of points are equidistant from obstacles, but this 
+        doesn't scale well to higher dimensions. It also shows a probabilistic 
+        roadmap, but the problem is that we may need to generate enough points 
+        to ensure that every start/goal pair is connected through the graph.
+\end{itemize}
+\begin{figure}
+  \includegraphics[width=\linewidth]{maps.png}
+  \caption{(a) shows a voronoi map and (b) shows a probabilistic roadmap.}
+  \label{fig:maps}
+\end{figure}
 \end{document}
