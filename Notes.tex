@@ -753,4 +753,73 @@ product} here which is described by:
 \begin{equation}
         \mathbf f(X_1...X_j,Y_1...Y_k,Z_1...Z_l)=\mathbf f_1(X_1...X_j,Y_1...Y_k)\times \mathbf f_2(Y_1...Y_k,Z_1...Z_l)
 \end{equation}
+\section{Making Complex Decisions}
+Here we look at complex application that can involve multi-agent systems, where 
+multiple agents are competing for a scarce resource.
+\subsection{Mechanism Design}
+Here we would like to design a game whose solutions, consisting of each agent 
+pursuing its own rational strategy, result in the maximization of some global 
+utility function. This problem is called \textbf{mechanism design} or \textbf{
+inverse game theory}. Formally a mechanism consists of:
+\begin{itemize}
+        \item A language for describing the set of allowable strategies that 
+        agents may adopt.
+        \item A distinguished agent, called the \textbf{center}, that collects 
+        reports of strategy choices from the agents in the game.
+        \item An outcome rule, known to all agents, that the center uses to 
+        determine payoffs to each agent, given their strategy choices.
+\end{itemize}
+\subsection{Auctions}
+Each bidder \(i\) has a utility value \(v_i\) for having the item. Given \(v_i\),
+each bidder get a chance, at the appropriate time or times in the auction, to 
+make a bid \(b_i\). The highest bid, \(b_{max}\) wins the item, but the price 
+paid need not be \(b_{max}\); that's part of the mechanism design.\\
+
+The best-known mechanism is the \textbf{ascending bid} or an \textbf{English 
+auction}, in which the center start by asking for a minimum bid \(b_{min}\). If
+some bidder is willing to pay that amount, the center then asks for \(b_{min}+d\).
+An auction is \textbf{efficient} if the goods go to the agent who values them 
+most. The most important things an auction design can do is to encourage a 
+sufficient number of bidders to enter the game and discourage them from engaging
+in \textbf{collusion}, which is an unfair or illegal agreement by two or more 
+bidders to manipulate prices. It is desirable that the bidders have a \textbf{
+dominant strategy}, meaning a strategy that works against all other strategies,
+and therefore can be adopted without regard for other agents' strategies. A 
+mechanism where agents have this strategy is called a \textbf{strategy-proof} 
+mechanism. And if the strategy involves revealing their true value, \(v_i\), then
+it is called a \textbf{truth-revealing} auction. A disadvantage of the ascending
+bid auction is that it can discourage competition and another disadvantage is 
+that it has high communication costs.\\
+
+A \textbf{Dutch auction} is typically, open-cry and descending auction. Here the
+auctioneer starts by asking for an extremely high initial price and repeatedly 
+lowers the price of the good in small steps. The auctions ends when someone 
+makes a bid at the current offer price. The price paid by the winner is the 
+price when their bid was made. They can suffer from similar problems as English
+auctions. \\
+
+An alternative mechanism is the \textbf{sealed-bid auction} where each bidder 
+makes a single bid and communicates it only to the auctioneer. Here the agent 
+would have to do some computation as to what the other bids could be. In the 
+\textbf{sealed-bid second-price auction} or a \textbf{Vickrey auction}, the 
+winner pays the price of the second-highest bid, \(b_o\), rather than paying his
+own bid. This causes the agent to not deliberate on other agents' decisions, but 
+just bid \(v_i\), thus the mechanism is truth-revealing. Note that the utility 
+of agent \(i\) in terms of his bid \(b_i\), his value \(v_i\), and the best bid
+among other agents \(b_o\) is:
+\begin{equation}
+        u_i = 
+        \begin{cases}
+                (v_i - b_o) & \text{if } b_i > b_o \\
+                0 & \text{otherwise} \\
+        \end{cases}
+\end{equation}
+Note that the expected value to the seller is \(b_o\), which is the same expected
+return as the limit of the English auction as the increment \(d\) goes to zero.
+The \textbf{revenue equivalence theorem} states that, with a few minor caveats,
+any auction mechanism where risk-neutral bidder have values \(v_i\) known to 
+themselves (but know a probability distribution from which those values are 
+sampled), will yield the same expected revenue. This means that the various 
+mechanisms aren't competing on the basis of revenue generation, but rather on
+other qualities.
 \end{document}
