@@ -688,4 +688,69 @@ independent, given the cause:
 Such a probability distribution function is called a \textbf{naive Bayes} 
 model as it is often used in cases where the ``effect'' variables are not 
 actually conditionally independent given the cause variables.
+\section{Bayesian Networks}
+A Bayesian network is a directed graph in which each node is annotated with 
+quantitative probability information and has the following features:
+\begin{itemize}
+        \item Each node corresponds to a random variable, which may be discrete 
+        or continuous.
+        \item A set of directed links or arrows connects pairs of nodes. If 
+        there is an from from node \(X\) to node \(Y\), \(X\) is the parent of 
+        \(Y\). The graph has no directed cycles and is therefore a DAG.
+        \item Each node \(X_i\) has a conditional probability distribution \(\mathbf P(X_i|Parents(X_i))\)
+        that quantifies the effect of the parents on the node.
+\end{itemize}
+A \textbf{conditional probability table} for boolean \(X_i\) with \(k\) boolean 
+parents has \(2^k\) rows for the combination of parent values. If each variable
+has no more than \(k\) parents, the complete network requires \(O(n\cdot 2^k)\)
+numbers as compared to \(O(2^n)\) for the full joint distribution.
+\subsection{Representing Bayesian Networks}
+A generic entry in the joint distribution is the probability of a conjunction of
+particular assignments to each variable, such as \(P(X_1=x_1 \land ... \land X_n = x_n)\)
+which we abbreviate to \(P(x_1,...,x_n)\) and is given by:
+\begin{equation}
+        P(x_1,...,x_n) = \prod_{i=1}^n P(x_i|parents(X_i))
+\end{equation}
+The chain rule is useful when constructing Bayesian networks:
+\begin{equation}
+        P(x_1,...,x_n) = \prod_{i=1}^n P(x_i|x_{i-1},...,x_1)
+\end{equation}
+Also note that for every variable \(X_i\) in the network:
+\begin{equation}
+        \mathbf P(X_i|X_{i-1},...,X_i) = \mathbf P(X_i|Parents(X_i))
+\end{equation}
+Provided that \(Parents(X_i) \subseteq \{X_{i-1},...,X_1\}\). What this equation 
+says is that the Bayesian network is a correct representation of the domain only 
+if each node is conditionally independent of its other predecessors in the node 
+ordering, given its parents, which can be satisfied if:
+\begin{itemize}
+        \item Node: First determine the set of variables required to model the 
+        domain and order them. Any order will work, but the network will be more 
+        compact if the order is such that causes precede effects.
+        \item Links: For \(i=1\) to \(n\) do:
+                \begin{itemize}
+                        \item Choose from \(X_1,...,X_{i-1}\) a minimal set of 
+                        parents for \(X_i\) such that the previous equation is 
+                        satisfied
+                        \item For each parent insert a link from parent to \(X_i\)
+                        \item Write down the CPT, \(\mathbf P(X_i|Parents(X_i))\)
+                \end{itemize}
+\end{itemize}
+\subsection{Exact Inference in Bayesian Networks}
+The basic task for any probabilistic inference systems is to compute the 
+posterior probability distribution for a set of \textbf{query variables}, given 
+some observed \textbf{event} i.e. some assignment of values to a set of 
+\textbf{evidence variables}. A complete set of variables is \(\mathbf X=\{X\} \cup \mathbf E \cup \mathbf Y\).
+Where \(\mathbf Y\) are the hidden variables and \(\mathbf E\) denotes evidence 
+variables. We can infer by enumeration:
+\begin{equation}
+        \mathbf P(X|\mathbf e) = \alpha \mathbf P(X,\mathbf e) = \alpha \sum_{\mathbf y} \mathbf P(X,\mathbf e,\mathbf y)
+\end{equation}
+But this is computationally expensive as a recursive DFS would give us \(O(n)\)
+space complexity and \(O(d^n)\) time complexity. We can use \textbf{variable
+elimination} here to remember past computations. Note that we use \textbf{pointwise
+product} here which is described by:
+\begin{equation}
+        \mathbf f(X_1...X_j,Y_1...Y_k,Z_1...Z_l)=\mathbf f_1(X_1...X_j,Y_1...Y_k)\times \mathbf f_2(Y_1...Y_k,Z_1...Z_l)
+\end{equation}
 \end{document}
