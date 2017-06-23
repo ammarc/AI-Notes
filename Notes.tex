@@ -717,7 +717,7 @@ The chain rule is useful when constructing Bayesian networks:
 \end{equation}
 Also note that for every variable \(X_i\) in the network:
 \begin{equation}
-        \mathbf P(X_i|X_{i-1},...,X_i) = \mathbf P(X_i|Parents(X_i))
+        \mathbf P(X_i|X_{i-1},...,X_1) = \mathbf P(X_i|Parents(X_i))
 \end{equation}
 Provided that \(Parents(X_i) \subseteq \{X_{i-1},...,X_1\}\). What this equation 
 says is that the Bayesian network is a correct representation of the domain only 
